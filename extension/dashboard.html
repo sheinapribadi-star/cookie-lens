@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cookie Lens — your cookie jar</title>
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+<a class="skip" href="#jar">Skip to the cookie table</a>
+<div class="page">
+  <header class="top">
+    <span class="wordmark" id="wordmark"></span>
+    <nav aria-label="Sections">
+      <a href="#overview">Overview</a><a href="#jar">Cookie jar</a><a href="#settings">Settings</a><a href="#about">About the data</a>
+    </nav>
+    <span class="local"><span data-icon="lock"></span> Stored only in this browser</span>
+  </header>
+
+  <section id="overview" class="intro">
+    <h1>Your cookie jar</h1>
+    <p class="lede" id="lede"></p>
+  </section>
+
+  <section class="ledger" aria-label="Totals over time" id="ledger"></section>
+
+  <div class="split">
+    <section aria-labelledby="h-follow">
+      <div class="sec-head"><h2 id="h-follow">Who follows you</h2><span class="label">Third parties, by sites seen on</span></div>
+      <ol class="bars" id="follow"></ol>
+    </section>
+    <section aria-labelledby="h-after">
+      <div class="sec-head"><h2 id="h-after">After-load cookies</h2><span class="label">Non-essential, per site</span></div>
+      <p class="aside">Cookie Lens can’t see you click “Accept”. It can see marketing and analytics cookies arriving <em>before</em> a page finished loading (before you could answer a banner) and <em>after</em> it (often a click on Accept, sometimes lazy-loaded ads).</p>
+      <table class="mini" id="after"></table>
+    </section>
+  </div>
+
+  <section id="jar" aria-labelledby="h-jar">
+    <div class="sec-head"><h2 id="h-jar">Every cookie in this profile</h2><span class="label" id="jarCount"></span></div>
+    <div class="toolbar">
+      <label class="search"><span data-icon="search"></span><span class="sr-only">Search</span><input id="q" type="search" placeholder="Search domain or cookie name" autocomplete="off"></label>
+      <div class="chips" role="group" aria-label="Filter" id="chips"></div>
+      <div class="bulk">
+        <span id="selCount" class="label"></span>
+        <button class="btn btn--ghost" id="delSelTrk" disabled>Delete trackers in selection</button>
+        <button class="btn btn--stamp" id="delSel" disabled>Delete selected</button>
+      </div>
+    </div>
+    <table class="jar">
+      <thead><tr>
+        <th class="c-check"><input type="checkbox" id="checkAll" aria-label="Select all visible domains"></th>
+        <th class="c-dom"><button data-sort="owner">Domain</button></th>
+        <th class="c-num"><button data-sort="count">Cookies</button></th>
+        <th class="c-num"><button data-sort="trackers">Trackers</button></th>
+        <th class="c-mix">Category mix</th>
+        <th class="c-num"><button data-sort="seenOn">Seen on</button></th>
+        <th class="c-num"><button data-sort="longest">Longest</button></th>
+        <th class="c-x"><span class="sr-only">Expand</span></th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </section>
+
+  <section id="settings" aria-labelledby="h-settings" class="settings">
+    <div class="sec-head"><h2 id="h-settings">Settings</h2></div>
+    <div class="set-grid">
+      <div>
+        <label class="switch big"><input type="checkbox" id="autoClean"><span>Auto-clean trackers when a tab closes</span></label>
+        <p class="aside">Off by default, so you can add sites to the keep list first. When on, closing a tab deletes the tracker cookies it saw, unless another open tab is still using that tracker or its domain is on your keep list. Everything else stays.</p>
+      </div>
+      <div>
+        <h3 class="label">Keep list</h3>
+        <p class="aside">Sites whose cookies are never touched by clean-up. Add the ones you sign in to.</p>
+        <form id="keepForm" class="keepform"><label class="sr-only" for="keepInput">Add a site</label><input id="keepInput" class="mono" placeholder="example.com" autocomplete="off"><button class="btn btn--ghost">Add</button></form>
+        <ul class="keeplist" id="keepList"></ul>
+      </div>
+      <div>
+        <h3 class="label">Your data</h3>
+        <p class="aside">Cookie Lens stores counts, cookie names and domains, never cookie values.</p>
+        <div class="row-btns"><button class="btn btn--ghost" id="export"></button><button class="btn btn--ghost" id="reset">Reset history</button></div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="about" class="about" aria-labelledby="h-about">
+    <h2 id="h-about">About the data</h2>
+    <div class="cols">
+      <p><b>How cookies are classified.</b> Names are matched against the <a href="https://github.com/jkwakman/Open-Cookie-Database">Open Cookie Database</a> (Apache-2.0) for category and purpose. Domains are matched against <a href="https://github.com/disconnectme/disconnect-tracking-protection">Disconnect’s tracking protection list</a> (CC BY-NC-SA 4.0) for known trackers and their owners. The <a href="https://publicsuffix.org">Public Suffix List</a> (MPL-2.0) decides what counts as the same site. On top: third-party or not, lifetime, and whether the value looks like a unique ID. Values are read in memory and never saved.</p>
+      <p><b>What it can’t know.</b> Whether you clicked Accept on a banner, what a site does with a cookie on its servers, or tracking done without cookies (fingerprinting, local storage, login-based tracking). Unlisted cookies aren’t guessed at. A “tracker” label means a list or a strong signal says so, not proof of harm.</p>
+      <p><b>Where your data goes.</b> Nowhere. No servers, no analytics, no remote code. The lists ship inside the extension and are dated <span id="dataDate" class="mono">Oct 2026</span>. Fonts: Instrument Serif, Instrument Sans, IBM Plex Mono (SIL OFL).</p>
+    </div>
+  </footer>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" hidden tabindex="-1"></aside>
+<script type="module" src="dashboard.js"></script>
+</body>
+</html>

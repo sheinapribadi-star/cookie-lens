@@ -1,0 +1,21 @@
+{
+  "name": "cookie-lens",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chrome extension (MV3) that shows which cookies a site sets, which ones track you and why, and lets you clear them. On-device only.",
+  "type": "module",
+  "scripts": {
+    "build:data": "node scripts/build-data.mjs",
+    "build:icons": "node scripts/render-icons.mjs",
+    "test": "node tests/e2e.mjs",
+    "zip": "cd extension && rm -f ../cookie-lens.zip && zip -qr ../cookie-lens.zip . -x '.*'"
+  },
+  "author": "Sheina Pribadi <pribadisheina@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@fontsource/ibm-plex-mono": "^5.0.0",
+    "@fontsource/instrument-sans": "^5.0.0",
+    "@fontsource/instrument-serif": "^5.0.0",
+    "playwright": "^1.50.0"
+  }
+}

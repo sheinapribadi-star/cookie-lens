@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cookie Lens</title>
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <header class="mast">
+    <span class="wordmark" id="wordmark"></span>
+    <span class="site mono" id="site" title=""></span>
+    <label class="switch keep" title="Keep this site's cookies: excluded from tracker clean-up and auto-clean">
+      <input type="checkbox" id="keep"><span>Keep</span>
+    </label>
+  </header>
+  <main id="main" aria-live="polite"></main>
+  <footer class="foot" id="foot" hidden>
+    <div class="actions">
+      <button class="btn btn--stamp" id="clearTrackers"></button>
+      <button class="btn btn--ghost" id="clearAll">Clear all for this site</button>
+    </div>
+    <div class="fine-print">
+      <span>Classified on this device. Nothing leaves your browser.</span>
+      <a href="dashboard.html" target="_blank" id="dash">Dashboard</a>
+    </div>
+  </footer>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

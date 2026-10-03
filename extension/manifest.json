@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Cookie Lens",
+  "short_name": "Cookie Lens",
+  "version": "1.0.0",
+  "description": "See which cookies a site sets, which ones track you and why, and clear them. Everything is classified on your device.",
+  "minimum_chrome_version": "120",
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "action": {
+    "default_title": "Cookie Lens",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/icon16.png", "32": "icons/icon32.png" }
+  },
+  "options_page": "dashboard.html",
+  "background": { "service_worker": "background.js", "type": "module" },
+  "permissions": ["cookies", "storage", "webRequest", "webNavigation"],
+  "host_permissions": ["<all_urls>"],
+  "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self'" }
+}

@@ -1,0 +1,176 @@
+{
+  "when": "Fri Oct 02 2026 21:32:56 GMT-0700 (Pacific Daylight Time)",
+  "perSite": [
+    {
+      "url": "https://www.cnn.com/",
+      "site": "cnn.com",
+      "cookies": 16,
+      "third": 1,
+      "trackers": 0,
+      "badge": "",
+      "cats": {
+        "unlisted": 10,
+        "functional": 6
+      },
+      "early": 0,
+      "late": 0,
+      "consent": "OneTrust record lists 20 consent groups: 20 allowed, 0 refused. This site uses its own group IDs, so Cookie Lens can’t name them.",
+      "sample": []
+    },
+    {
+      "url": "https://www.theverge.com/",
+      "site": "theverge.com",
+      "cookies": 378,
+      "third": 331,
+      "trackers": 332,
+      "badge": "332",
+      "cats": {
+        "unlisted": 39,
+        "functional": 21,
+        "marketing": 297,
+        "analytics": 20,
+        "necessary": 1
+      },
+      "early": 251,
+      "late": 193,
+      "consent": "OneTrust record says: allowed necessary, functional, performance, social, targeting.",
+      "sample": [
+        "_gcl_au — Google — Used by Google AdSense for experimenting with advertisement efficiency across websites using their services. Lasts 3 months.",
+        "sailthru_pageviews — Sailthru — This cookie is set by Sailthru to tracks the number of page views for each user. Lasts 1 hour.",
+        "sailthru_content — Sailthru — Tracks recent pageviews for all visitors, and can be used to populate a new user profile. Lasts 12 months."
+      ]
+    },
+    {
+      "url": "https://www.bbc.com/news",
+      "site": "bbc.com",
+      "cookies": 54,
+      "third": 24,
+      "trackers": 24,
+      "badge": "24",
+      "cats": {
+        "marketing": 20,
+        "unlisted": 15,
+        "functional": 12,
+        "analytics": 7
+      },
+      "early": 20,
+      "late": 4,
+      "consent": "",
+      "sample": [
+        "optimizelyEndUserId — Optimizely — Stores a visitor's unique Optimizely identifier. Lasts 6 months.",
+        "_pcus — Piano — This cookie is used to User segmentation. Lasts 13 months.",
+        "cX_G — Piano — This cookie is a Global ID mapping different IDs together into one ID. Lasts 13 months."
+      ]
+    },
+    {
+      "url": "https://www.allrecipes.com/",
+      "site": "allrecipes.com",
+      "cookies": 236,
+      "third": 192,
+      "trackers": 195,
+      "badge": "195",
+      "cats": {
+        "unlisted": 31,
+        "functional": 13,
+        "analytics": 11,
+        "marketing": 180,
+        "necessary": 1
+      },
+      "early": 15,
+      "late": 128,
+      "consent": "",
+      "sample": [
+        "_gcl_au — Google — Used by Google AdSense for experimenting with advertisement efficiency across websites using their services. Lasts 3 months.",
+        "_li_ss — LiveIntent — Sets a unique ID for the visitor, that allows third party advertisers to target the visitor with relevant advertisement. Lasts 13 months.",
+        "_cc_id — Lotame — Collects anonymous statistical data related to the user's website visits, such as the number of visits, average time… Lasts 9 months."
+      ]
+    }
+  ],
+  "results": [
+    {
+      "name": "service worker loaded",
+      "pass": true,
+      "detail": "lijaagfnfpddbemjpfjhbkiicablmcdc"
+    },
+    {
+      "name": "detects cookies on cnn.com",
+      "pass": true,
+      "detail": "16 cookies, 1 third-party, 0 trackers"
+    },
+    {
+      "name": "badge matches tracker count on cnn.com",
+      "pass": true,
+      "detail": "badge=\"\""
+    },
+    {
+      "name": "detects cookies on theverge.com",
+      "pass": true,
+      "detail": "378 cookies, 331 third-party, 332 trackers"
+    },
+    {
+      "name": "badge matches tracker count on theverge.com",
+      "pass": true,
+      "detail": "badge=\"332\""
+    },
+    {
+      "name": "detects cookies on bbc.com",
+      "pass": true,
+      "detail": "54 cookies, 24 third-party, 24 trackers"
+    },
+    {
+      "name": "badge matches tracker count on bbc.com",
+      "pass": true,
+      "detail": "badge=\"24\""
+    },
+    {
+      "name": "detects cookies on allrecipes.com",
+      "pass": true,
+      "detail": "236 cookies, 192 third-party, 195 trackers"
+    },
+    {
+      "name": "badge matches tracker count on allrecipes.com",
+      "pass": true,
+      "detail": "badge=\"195\""
+    },
+    {
+      "name": "at least one site has third-party trackers",
+      "pass": true,
+      "detail": "theverge.com: 332"
+    },
+    {
+      "name": "popup rows reachable and expandable by keyboard",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "per-cookie delete removes it from Chrome",
+      "pass": true,
+      "detail": "_gcl_au @ .theverge.com"
+    },
+    {
+      "name": "drawer closes on Escape",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dashboard search filters the table",
+      "pass": true,
+      "detail": "1 rows for \"doubleclick.net\""
+    },
+    {
+      "name": "\"Clear trackers\" removes every tracker cookie it listed",
+      "pass": true,
+      "detail": "341 listed, 0 left immediately after"
+    },
+    {
+      "name": "stats recorded in chrome.storage.local",
+      "pass": true,
+      "detail": "{\"seen\":575,\"trackers\":412,\"deleted\":342}"
+    },
+    {
+      "name": "auto-clean deletes third-party trackers when the tab closes",
+      "pass": true,
+      "detail": "126 trackers before close, 0 third-party trackers left  | open sites: "
+    }
+  ]
+}
