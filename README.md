@@ -32,7 +32,7 @@ More in [`screenshots/`](screenshots/): the full dashboard page, the keyboard fo
 
 ## Install (Load unpacked)
 
-1. Download or clone this repo (or unzip `cookie-lens.zip`).
+1. Download `cookie-lens.zip` from the [latest release](https://github.com/sheinapribadi-star/cookie-lens/releases/latest) and unzip it, or clone this repo.
 2. Open `chrome://extensions` and turn on **Developer mode** (top right).
 3. Click **Load unpacked** and choose the `extension/` folder (or the unzipped folder).
 4. Pin Cookie Lens from the puzzle-piece menu. Open any website and click the icon.
@@ -92,7 +92,7 @@ npx playwright install chromium
 npm run build:data     # data-src/* -> extension/data/*.json
 npm run build:icons    # design/icon.svg -> extension/icons/*.png
 npm test               # loads the extension in headless Chromium and runs it against real sites
-npm run zip            # -> cookie-lens.zip
+npm run zip            # -> cookie-lens.zip (git-ignored; attached to GitHub Releases instead)
 ```
 
 `tests/e2e.mjs` launches Chromium with `--load-extension`, visits cnn.com, theverge.com, bbc.com/news and allrecipes.com,
@@ -118,3 +118,9 @@ tests/                Playwright end-to-end test
 
 ## License
 Code: MIT © 2026 Sheina Pribadi. Data and fonts: see [`extension/THIRD_PARTY_NOTICES.md`](extension/THIRD_PARTY_NOTICES.md).
+
+Bundled third-party data keeps its own license:
+- `extension/data/trackers.json` is derived from the [Disconnect tracking protection list](https://github.com/disconnectme/disconnect-tracking-protection), © Disconnect, Inc., licensed **CC BY-NC-SA 4.0**. It is shared here under the same license for free, non-commercial use. Commercial forks need a different list or a license from Disconnect.
+- `extension/data/ocd.json` is from the [Open Cookie Database](https://github.com/jkwakman/Open-Cookie-Database), Apache License 2.0.
+- `extension/data/psl.json` is from the [Public Suffix List](https://publicsuffix.org), Mozilla Public License 2.0.
+- Fonts (Instrument Serif, Instrument Sans, IBM Plex Mono) are under the SIL Open Font License 1.1.
